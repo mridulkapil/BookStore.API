@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BookStore.API.Data;
 using BookStore.API.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -20,7 +21,7 @@ namespace BookStore.API.Controllers
         {
             _bookRepository = bookRepository;
         }
-
+        [Authorize]
         [HttpGet("")]
         public async Task<IActionResult> GetAllBooks()
         {
