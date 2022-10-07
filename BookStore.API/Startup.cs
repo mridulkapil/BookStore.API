@@ -70,7 +70,6 @@ namespace BookStore.API
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
 
             app.UseAuthentication();
